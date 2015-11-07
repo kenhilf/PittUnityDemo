@@ -1,0 +1,1 @@
+Prefabs would go here.  Prefabs are like templates for instantiating copies of objects in the scene, either from within the editor or at runtime.

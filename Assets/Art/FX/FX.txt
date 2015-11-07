@@ -1,0 +1,1 @@
+Files related to visual effects would go here, such as prefabs for particle systems and any textures, models, animations, etc that may be part of them.

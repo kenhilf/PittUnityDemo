@@ -1,0 +1,1 @@
+Scenes are the files in which Unity stores levels.  Every game has at least one scene.
