@@ -6,7 +6,8 @@ public class Bullet : MonoBehaviour
 {
     public float Speed = 300f;
     public List<GameObject> IgnoreObjects = new List<GameObject>();
-    private Rigidbody _rigidbody;
+	public ShipController Owner;
+	private Rigidbody _rigidbody;
 
 	private void Start()
 	{
@@ -27,6 +28,12 @@ public class Bullet : MonoBehaviour
             {
                 return;
             }
+
+		    Astroid a = rb.gameObject.GetComponent<Astroid>();
+		    if (a != null)
+		    {
+			    Owner.ScorePoint();
+		    }
         }
 
         Debug.Log("Destroyed by hitting " + col.gameObject.name);

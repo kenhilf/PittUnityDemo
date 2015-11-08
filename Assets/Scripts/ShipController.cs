@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ShipController : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class ShipController : MonoBehaviour
     public GameObject BulletPrefab;
     public Transform BulletSpawnPoint;
 
+	public TextMesh ScoreText;
+
     private Rigidbody _rigidbody;
     private Vector3 _velocity = Vector3.zero;
     private Vector3 _outsideForces = Vector3.zero;
+	private int _score = 0;
 
     private void Start()
 	{
@@ -23,6 +27,8 @@ public class ShipController : MonoBehaviour
         {
             r[i].material.color = Player.PlayerColor;
         }
+
+        ScoreText.color = Player.PlayerColor;
 	}
 
     private void Update()
@@ -30,7 +36,9 @@ public class ShipController : MonoBehaviour
         if (Input.GetKeyDown(Player.KeyFire))
         {
             GameObject bullet = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
-            bullet.GetComponent<Bullet>().IgnoreObjects.Add(gameObject);
+			Bullet bill = bullet.GetComponent<Bullet>();
+			bill.IgnoreObjects.Add(gameObject);
+			bill.Owner = this;
         }
     }
 
@@ -71,4 +79,10 @@ public class ShipController : MonoBehaviour
 
         _outsideForces += (pushback * 5f);
     }
+
+	public void ScorePoint()
+	{
+		_score++;
+		ScoreText.text = _score.ToString();
+	}
 }

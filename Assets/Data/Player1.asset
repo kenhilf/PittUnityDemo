@@ -15,4 +15,4 @@ MonoBehaviour:
   KeyRight: 100
   KeyLeft: 97
   KeyFire: 32
-  PlayerColor: {r: .566176474, g: .120728821, b: .258971125, a: 1}
+  PlayerColor: {r: .862069011, g: 1, b: 0, a: 1}

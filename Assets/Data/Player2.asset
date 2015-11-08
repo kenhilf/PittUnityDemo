@@ -14,5 +14,5 @@ MonoBehaviour:
   KeyForward: 273
   KeyRight: 275
   KeyLeft: 276
-  KeyFire: 256
+  KeyFire: 303
   PlayerColor: {r: .106617644, g: .426470578, b: .227941185, a: 1}
